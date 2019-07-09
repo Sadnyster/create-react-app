@@ -154,6 +154,33 @@ module.exports = function(
     }
   }
 
+  // copy . files/folders
+  try {
+    fs.moveSync(
+      path.join(appPath, 'eslintrc'),
+      path.join(appPath, '.eslintrc'),
+      []
+    );
+    fs.moveSync(
+      path.join(appPath, 'eslintignore'),
+      path.join(appPath, '.eslintignore'),
+      []
+    );
+    fs.moveSync(
+      path.join(appPath, 'prettierrc'),
+      path.join(appPath, '.prettierrc'),
+      []
+    );
+    fs.moveSync(
+      path.join(appPath, 'settings.json'),
+      path.join(appPath, '.vscode/settings.json'),
+      []
+    );
+  } catch (err) {
+    console.error('ERR', err.code);
+    throw err;
+  }
+
   let command;
   let args;
 

@@ -1,0 +1,6 @@
+typings/**
+public/**
+*.d.ts
+*.config.js
+serviceWorker.ts
+data-service.js
